@@ -421,10 +421,12 @@
             </li>
           </ul>
         </div>
-        <div class="footer-design-subscribe"></div>
+        <div class="footer-design">
+          <p>Subscribe</p>
+        </div>
       </div>
     </footer>
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop" data-modal>
       <div class="modal">
         <button
           type="button"
@@ -485,7 +487,7 @@
               </svg>
             </span>
           </label>
-          <label class="modal-form-label">
+          <label class="modal-form-label modal-form-label-margin">
             <span class="modal-form-input-desc">Comment</span>
             <textarea
               name="user-message"
@@ -493,12 +495,21 @@
               placeholder="Text input"
             ></textarea>
           </label>
-          <label class="modal-form-label">
+          <label
+            for="user-policy"
+            class="modal-form-label modal-form-checkbox-flex"
+          >
             <input
+              id="user-policy"
               name="user-policy"
               type="checkbox"
-              class="modal-form-checkbox"
+              class="modal-form-checkbox visually-hidden"
             />
+            <span class="modal-form-checkbox-fake">
+              <svg class="modal-form-checkbox-fake-icon" width="16" height="16">
+                <use href="./images/icons.svg#icon-accept"></use>
+              </svg>
+            </span>
             <span class="modal-form-check-des">
               I accept the terms and conditions of the
               <a href="">Privacy Policy</a></span

@@ -435,12 +435,12 @@ img {
   outline: 2px solid violet;
 }
 
-.footer-design-subscribe {
-  outline: 2px solid purple;
+.footer-design:nth-child(1) {
+  margin-right: 120px;
 }
 
-.footer-design:not(:last-child) {
-  margin-right: 120px;
+.footer-design:nth-child(2) {
+  margin-right: 80px;
 }
 
 .footer-social-link:hover,
@@ -797,6 +797,7 @@ img {
 .modal-form-input:focus + .modal-form-icons {
   fill: var(--icon-background);
 }
+
 .modal-form-input-desc {
   display: block;
   margin-bottom: 4px;
@@ -828,6 +829,7 @@ img {
   line-height: 1.16;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-message:focus {
@@ -835,11 +837,15 @@ img {
   border-color: var(--icon-background);
 }
 
+.modal-form-message:focus::placeholder {
+  color: var(--icon-background);
+}
+
 .modal-form-submit {
-  display: block;
-  max-width: 169px;
+  min-width: 169px;
   height: 56px;
   padding: 16px 32px;
+  align-self: center;
 
   font-family: "Roboto";
   font-style: normal;
@@ -853,6 +859,12 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-submit:hover,
+.modal-form-submit:focus {
+  background-color: var(--focus-hover-color);
 }
 
 .modal-form-input-wrapper {
@@ -874,13 +886,39 @@ img {
   color: var(--icon-company-background);
 }
 
-.modal-form-checkbox::before {
-  content: "";
+.modal-form-checkbox-fake {
   display: block;
   width: 16px;
   height: 16px;
+  margin-right: 8px;
   cursor: pointer;
 
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
+}
+
+.modal-form-checkbox-fake-icon {
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-checkbox:checked + .modal-form-checkbox-fake {
+  border: none;
+}
+
+.modal-form-checkbox:checked
+  + .modal-form-checkbox-fake
+  > .modal-form-checkbox-fake-icon {
+  opacity: 1;
+}
+
+.modal-form-checkbox-flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal-form-label-margin {
+  margin-bottom: 16px;
 }
