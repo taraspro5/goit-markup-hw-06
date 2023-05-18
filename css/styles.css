@@ -497,6 +497,10 @@ img {
   color: var(--primary-background);
 }
 
+.footer-form-wrapper {
+  display: flex;
+}
+
 /* Header */
 
 .nav {
